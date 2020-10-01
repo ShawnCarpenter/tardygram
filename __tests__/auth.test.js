@@ -1,10 +1,11 @@
+const { getAgent } = require('../data/data-helpers');
 const fs = require('fs');
 const pool = require('../lib/utils/pool');
 const request = require('supertest');
 const app = require('../lib/app');
 const userService = require('../lib/services/user-service');
 
-describe('tardygram routes', () => {
+describe('auth routes', () => {
   beforeEach(() => {
     return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'));
   });
@@ -58,7 +59,8 @@ describe('tardygram routes', () => {
 
     expect(response.body).toEqual({
       id: expect.any(String),
-      email: 'test@test.com'
+      email: 'test@test.com',
+      profilePhotoUrl: 'https://placekitten.com/200/200'
     });
 
     const responseWithoutAUser = await request(app)
