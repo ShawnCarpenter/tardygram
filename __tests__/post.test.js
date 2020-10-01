@@ -16,7 +16,7 @@ describe('post routes', () => {
       });
     expect(response.body).toEqual({
       id:expect.any(String),
-      userId:'1',
+      userId:expect.any(String),
       photoUrl: 'https://placekitten.com/300/300',
       caption: 'words and stuff',
       tags:['cute', 'adorable murder machine']
