@@ -49,7 +49,20 @@ describe('post routes', () => {
         postId:expect.any(Number),
         comment:expect.any(String),
       }])
-
     });
   });
+  // ('updates a post with patch', async() => {
+  //   const newPost = await getAgent()
+  //     .post('/api/v1/posts')
+  //     .send({
+  //       photoUrl: 'https://placekitten.com/300/300',
+  //       caption: 'words and stuff',
+  //       tags:['cute', 'adorable murder machine']
+  //     });
+  //   console.log(newPost.body);
+  //   const response = await getAgent()
+  //     .patch(`/api/v1/posts/${newPost.id}`)
+  //     .send({ caption:'new stuff' });
+  //   expect(response.body).toEqual({ ...newPost.body, caption: 'new stuff' });
+  // });
 });
